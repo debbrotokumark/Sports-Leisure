@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+#left {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    background-color: white;
+}
+
+#left img {
+    position: absolute;
+    width: 100%;
+    z-index: 110;
+    object-fit: cover;
+    height: 100%;
+    opacity: 1;
+    animation-delay: 0s;
+    animation-name: rote;
+    animation-duration: 3s;
+    overflow: hidden;
+    animation-fill-mode: forwards;
+
+}
+
+#red-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    opacity: 1;
+    z-index: 2;
+    opacity: 1;
+    animation-name: right-to-left;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+#left #nav {
+    position: absolute;
+    padding: 20px 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    animation-name: top-to-bottom;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    z-index: 110;
+}
+
+#nav h1,
+i {
+    color: white;
+    font-size: 160%;
+}
+
+#left #botoom-title {
+    position: absolute;
+    bottom: 10%;
+    color: white;
+    right: 10%;
+    line-height: .9;
+    font-size: 490%;
+    z-index: 100;
+    opacity: 0;
+    animation-delay: 2s;
+    animation-name: bottom-to-top;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    transform: none;
+    /* Reset any lingering transformations after the animation */
+    z-index: 110;
+}
+
+#right {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    z-index: 500;
+    background-color: #f1e5e5;
+}
+
+#right #img-1 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    object-fit: cover;
+    display: inline-block;
+    width: 150px;
+    height: 180px;
+    opacity: 0;
+    animation-name: move-left-img;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+#right #img-2 {
+    position: absolute;
+    top: 30%;
+    object-fit: cover;
+    transform: translateY(-50%);
+    width: 250px;
+    height: 300px;
+    left: 10%;
+    animation-name: move-left-img;
+    animation-duration: 2.2s;
+    animation-fill-mode: forwards;
+}
+
+#right #img-3 {
+    position: absolute;
+    top: 70%;
+    right: 30%;
+    transform: translateY(-50%);
+    width: 150px;
+    opacity: 0;
+    animation-name: move-left-img;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    height: 200px;
+}
+
+#right>h1 {
+    rotate: -90deg;
+    position: absolute;
+    right: -20%;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 60px;
+}
+
+@keyframes bottom-to-top {
+    0% {
+        opacity: 0;
+        transform: translateY(30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* Ensure it returns to its normal position */
+    }
+}
+
+@keyframes top-to-bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes move-left-img {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes rote {
+    0% {
+        opacity: 0;
+        transform: rotate(30deg) scale(1.6);
+    }  
+
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+
+    }
+}
+
+@keyframes right-to-left {
+    0% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-100%);
+      
+    }
+}
+
